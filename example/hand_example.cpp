@@ -151,12 +151,13 @@ int main(int argc, char** argv)
     {
         usleep(100000);
         if(cnt++ % 10 == 0)
+        {
             label = label == "close" ? "open" : "close";
+            std::cout << "[Cmd: " << label << "] R: [" 
+                      << h1hand->getRightQ().transpose() << "] | L: [" 
+                      << h1hand->getLeftQ().transpose() << "]" << std::endl;
+        }
         h1hand->ctrl(label); // Control the hand
-        std::cout << "-- Hand State --\n";
-        std::cout << " R: " << h1hand->getRightQ().transpose() << std::endl;
-        std::cout << " L: " << h1hand->getLeftQ().transpose() << std::endl;
-        std::cout << "\033[3A"; // Move cursor up 3 lines
     }
 
     return 0;

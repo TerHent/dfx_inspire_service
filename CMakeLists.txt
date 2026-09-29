@@ -29,7 +29,7 @@ link_libraries(unitree_sdk2 ddsc ddscxx rt pthread)
 link_libraries(libboost_program_options.a)
 
 add_executable(inspire_g1 inspire_g1.cpp)
-add_executable(inspire_h1 inspire_h1.cpp)
+
 
 # example
 add_executable(hand_example example/hand_example.cpp)
